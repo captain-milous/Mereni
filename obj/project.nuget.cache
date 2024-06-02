@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "FrOLdQO2MdTSOBgMsSUBFxPP9flQQKywtqulU2KaPt1jVeP0UBzfPrKW0Omvv9rCgGqCyd6bcG0pBEPI61x87g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\milda\\source\\repos\\My projects\\Mereni\\Mereni.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\milda\\.nuget\\packages\\csvhelper\\32.0.3\\csvhelper.32.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

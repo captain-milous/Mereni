@@ -1,0 +1,17 @@
+C:\Users\milda\source\repos\My projects\Mereni\bin\Debug\net8.0\Mereni.exe
+C:\Users\milda\source\repos\My projects\Mereni\bin\Debug\net8.0\Mereni.deps.json
+C:\Users\milda\source\repos\My projects\Mereni\bin\Debug\net8.0\Mereni.runtimeconfig.json
+C:\Users\milda\source\repos\My projects\Mereni\bin\Debug\net8.0\Mereni.dll
+C:\Users\milda\source\repos\My projects\Mereni\bin\Debug\net8.0\Mereni.pdb
+C:\Users\milda\source\repos\My projects\Mereni\bin\Debug\net8.0\CsvHelper.dll
+C:\Users\milda\source\repos\My projects\Mereni\obj\Debug\net8.0\Mereni.csproj.AssemblyReference.cache
+C:\Users\milda\source\repos\My projects\Mereni\obj\Debug\net8.0\Mereni.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\milda\source\repos\My projects\Mereni\obj\Debug\net8.0\Mereni.AssemblyInfoInputs.cache
+C:\Users\milda\source\repos\My projects\Mereni\obj\Debug\net8.0\Mereni.AssemblyInfo.cs
+C:\Users\milda\source\repos\My projects\Mereni\obj\Debug\net8.0\Mereni.csproj.CoreCompileInputs.cache
+C:\Users\milda\source\repos\My projects\Mereni\obj\Debug\net8.0\Mereni.csproj.Up2Date
+C:\Users\milda\source\repos\My projects\Mereni\obj\Debug\net8.0\Mereni.dll
+C:\Users\milda\source\repos\My projects\Mereni\obj\Debug\net8.0\refint\Mereni.dll
+C:\Users\milda\source\repos\My projects\Mereni\obj\Debug\net8.0\Mereni.pdb
+C:\Users\milda\source\repos\My projects\Mereni\obj\Debug\net8.0\Mereni.genruntimeconfig.cache
+C:\Users\milda\source\repos\My projects\Mereni\obj\Debug\net8.0\ref\Mereni.dll
