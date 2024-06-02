@@ -51,7 +51,7 @@ namespace Mereni
                 {
                     if (!fileExists)
                     {
-                        csv.WriteField("Čas");
+                        csv.WriteField("Time");
                         csv.WriteField("T0imp1");
                         csv.WriteField("T1imp1");
                         csv.WriteField("T0imp2");
