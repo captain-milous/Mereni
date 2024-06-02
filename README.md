@@ -25,6 +25,7 @@ sudo apt-get install dhcpcd5
 sudo systemctl enable dhcpcd
 sudo systemctl start dhcpcd
 ```
+Otevřete soubor dhcpcd.conf:
 ```
 sudo nano /etc/dhcpcd.conf
 ```
@@ -36,8 +37,14 @@ static routers=192.168.1.1
 static domain_name_servers=192.168.1.1
 ```
 *Pokud používáte WiFi, změňte eth0 na wlan0.*
+
+Restartujte službu dhcpcd:
 ```
 sudo systemctl restart dhcpcd
+```
+Zkontrolujte nastavení: Ujistěte se, že se statická IP adresa použila správně.
+```
+hostname -I
 ```
 ### Instalace aplikace
 
