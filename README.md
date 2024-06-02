@@ -154,7 +154,7 @@ sudo crontab -e
 ```
 Přidejte následující řádek na konec souboru:
 ```
-@reboot /usr/bin/sudo /usr/bin/dotnet /cesta/k/vasi/aplikaci/myapp.dll
+@reboot /usr/bin/sudo /usr/bin/dotnet /home/username/Mereni/bin/Debug/net8.0/Mereni.dll
 ```
 
 
