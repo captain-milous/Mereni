@@ -10,7 +10,7 @@ namespace Mereni
         /// <summary>
         /// Cesta ke složce, kde budou ukládána měření.
         /// </summary>
-        public static string Folder = Path.Combine("\\home\\mites", "moje-mereni");
+        public static string Folder = Path.Combine("\\home\\mites\\Public", "Mereni");
         /// <summary>
         /// Příznak pro běh programu. Pokud je nastaven na false, program se ukončí.
         /// </summary>
