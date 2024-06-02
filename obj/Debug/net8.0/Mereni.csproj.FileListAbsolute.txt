@@ -15,3 +15,4 @@ C:\Users\milda\source\repos\My projects\Mereni\obj\Debug\net8.0\refint\Mereni.dl
 C:\Users\milda\source\repos\My projects\Mereni\obj\Debug\net8.0\Mereni.pdb
 C:\Users\milda\source\repos\My projects\Mereni\obj\Debug\net8.0\Mereni.genruntimeconfig.cache
 C:\Users\milda\source\repos\My projects\Mereni\obj\Debug\net8.0\ref\Mereni.dll
+C:\Users\milda\source\repos\My projects\Mereni\obj\Debug\net8.0\Mereni.sourcelink.json

@@ -2,10 +2,25 @@
 
 namespace Mereni
 {
+    /// <summary>
+    /// Hlavní třída programu, která obsahuje vstupní bod programu a definice základních proměnných.
+    /// </summary>
     public class Program
     {
+        /// <summary>
+        /// Cesta ke složce, kde budou ukládána měření.
+        /// </summary>
         public static string Folder = AppDomain.CurrentDomain.BaseDirectory + "Mereni";
+        /// <summary>
+        /// Příznak pro běh programu. Pokud je nastaven na false, program se ukončí.
+        /// </summary>
 
+        private static bool isRunning = true;
+        /// <summary>
+        /// Vstupní bod programu. Inicializuje HTTP listener a zpracovává příchozí HTTP požadavky.
+        /// </summary>
+        /// <param name="args">Argumenty příkazového řádku (nepoužívají se).</param>
+        /// <returns>Asynchronní úloha.</returns>
         static async Task Main(string[] args)
         {
             try
@@ -28,7 +43,7 @@ namespace Mereni
                 listener.Start();
                 Console.WriteLine("Listening...");
 
-                while (true)
+                while (isRunning)
                 {
                     try
                     {
@@ -54,7 +69,6 @@ namespace Mereni
                                 { "T1imp4", query["T1imp4"] }
                             };
                             CSVHandler.Save(devid, data);
-
                             string responseString = "Data received and logged";
                             byte[] buffer = System.Text.Encoding.UTF8.GetBytes(responseString);
                             response.ContentLength64 = buffer.Length;

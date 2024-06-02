@@ -1,4 +1,5 @@
 ﻿using CsvHelper;
+using CsvHelper.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Formats.Asn1;
@@ -9,10 +10,21 @@ using System.Threading.Tasks;
 
 namespace Mereni
 {
+    /// <summary>
+    /// Třída pro práci s CSV soubory. Obsahuje metody pro ukládání dat do CSV souborů.
+    /// </summary>
     public static class CSVHandler
     {
+        /// <summary>
+        /// Objekt pro zamčení souboru při zápisu, aby nedošlo k současnému zápisu z více vláken.
+        /// </summary>
         private static readonly object fileLock = new object();
-
+        /// <summary>
+        /// Uloží data do CSV souboru. Pokud soubor neexistuje, vytvoří jej a přidá záhlaví.
+        /// Pokud soubor existuje, přidá data jako nový řádek.
+        /// </summary>
+        /// <param name="devid">Identifikátor zařízení.</param>
+        /// <param name="data">Data k uložení, kde klíč je název sloupce a hodnota je hodnota pro daný sloupec.</param>
         public static void Save(string devid, Dictionary<string, string> data)
         {
             string directoryPath = Path.Combine(Program.Folder, devid);
@@ -28,8 +40,14 @@ namespace Mereni
             {
                 bool fileExists = File.Exists(filePath);
 
+                var config = new CsvConfiguration(CultureInfo.InvariantCulture)
+                {
+                    Delimiter = ";",
+                    HasHeaderRecord = !fileExists
+                };
+
                 using (var writer = new StreamWriter(filePath, true))
-                using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+                using (var csv = new CsvWriter(writer, config))
                 {
                     if (!fileExists)
                     {
