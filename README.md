@@ -12,7 +12,7 @@ Miloš Tesař
 ```
 sudo apt-get update 
 
-sudo apt-get upgrade
+sudo apt-get upgrade -y
 ```
 Pokud nemáte správné rozpoložení klávesnice:
 ```
@@ -54,7 +54,7 @@ sudo dotnet --version
 ### 3. Instalace aplikace
 Nainstalujte git:
 ```
-sudo apt-get install git
+sudo apt-get install git -y
 ```
 Naklonujte repositoř:
 ```
@@ -75,7 +75,7 @@ sudo dontnet Mereni.dll
 
 ### 4. Nastavení statické ip adresy
 ```
-sudo apt-get install dhcpcd5
+sudo apt-get install dhcpcd5 -y  
 ```
 ```
 sudo systemctl enable dhcpcd
@@ -104,7 +104,53 @@ hostname -I
 ```
 
 ### 5. Vytvoření sdílené složky
-
+Nainstalujte balíček Samba:
+```
+sudo apt install samba -y
+```
+Otevřete konfigurační soubor Samba:
+```
+sudo nano /etc/samba/smb.conf
+```
+Přidejte na konec souboru následující konfiguraci pro sdílenou složku:
+```
+[shared]
+path = /home/username/Mereni/bin/Debug/net8.0/Mereni
+writeable = yes
+create mask = 0777
+directory mask = 0777
+public = yes
+```
+Nastavte správná oprávnění:
+```
+sudo chown -R username:username /home/username/Mereni/bin/Debug/net8.0/Mereni
+sudo chmod -R 0777 /home/username/Mereni/bin/Debug/net8.0/Mereni
+```
+Přidejte Samba uživatele:
+```
+sudo smbpasswd -a pi
+```
+Restartujte Samba, aby se změny projevily:
+```
+sudo systemctl restart smbd
+```
 ### 6. Nastavení zapnutí aplikace po restartu
 
+
+
+
 ## Připojení ke sdílené složce
+
+### 1. Otevřete Průzkumník souborů na Windows 11.
+
+### 2. Klikněte na „Tento počítač“.
+
+### 3. Klikněte na „Připojit síťovou jednotku“ v horní nabídce.
+
+### 4. Vyberte písmeno jednotky a zadejte adresu vaší sdílené složky ve formátu:
+```
+\\IP_adresa_Raspberry_Pi\shared
+```
+### 5. Klikněte na „Dokončit“.
+
+### 6. Zadejte uživatelské jméno a heslo, které jste nastavili pro Samba (např. uživatel: pi, heslo: vámi_zadané_heslo).
