@@ -51,7 +51,29 @@ Ověření instalace:
 ```
 sudo dotnet --version
 ```
-### Nastavení statické ip adresy
+### 3. Instalace aplikace
+Nainstalujte git:
+```
+sudo apt-get install git
+```
+Naklonujte repositoř:
+```
+git clone https://github.com/captain-milous/Mereni.git
+```
+Vytvořte složku pro Zaznamenávání měření:
+```
+cd Mereni/bin/Debug/net8.0/
+
+sudo mkdir Mereni
+
+sudo chmod 777 Mereni
+```
+#### Spuštění aplikace:
+```
+sudo dontnet Mereni.dll
+```
+
+### 4. Nastavení statické ip adresy
 ```
 sudo apt-get install dhcpcd5
 ```
@@ -80,6 +102,9 @@ Zkontrolujte nastavení: Ujistěte se, že se statická IP adresa použila sprá
 ```
 hostname -I
 ```
-### Instalace aplikace
 
-### Vytvoření sdílené složky
+### 5. Vytvoření sdílené složky
+
+### 6. Nastavení zapnutí aplikace po restartu
+
+## Připojení ke sdílené složce
