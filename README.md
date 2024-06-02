@@ -17,7 +17,6 @@ Miloš Tesař
 ### 1. Update Linuxu
 ```
 sudo apt-get update 
-
 sudo apt-get upgrade -y
 ```
 Pokud nemáte správné rozpoložení klávesnice:
@@ -74,11 +73,10 @@ git clone https://github.com/captain-milous/Mereni.git
 Vytvořte složku pro Zaznamenávání měření:
 ```
 cd Mereni/bin/Debug/net8.0/
-
 sudo mkdir Mereni
-
 sudo chmod 777 Mereni
 ```
+
 #### Spuštění aplikace:
 ```
 sudo dontnet Mereni.dll
@@ -153,7 +151,6 @@ sudo systemctl restart smbd
 Otevřete cron konfiguraci pro uživatele root:
 ```
 sudo crontab -e
-
 ```
 Přidejte následující řádek na konec souboru:
 ```
@@ -173,6 +170,7 @@ Přidejte následující řádek na konec souboru:
 ```
 \\IP_adresa_Raspberry_Pi\shared
 ```
+
 5. Klikněte na „Dokončit“.
 
 6. Zadejte uživatelské jméno a heslo, které jste nastavili pro Samba (např. uživatel: pi, heslo: vámi_zadané_heslo).
