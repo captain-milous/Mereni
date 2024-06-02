@@ -10,7 +10,7 @@ namespace Mereni
         /// <summary>
         /// Cesta ke složce, kde budou ukládána měření.
         /// </summary>
-        public static string Folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Mereni");
+        public static string Folder = Path.Combine("\\home\\mites", "moje-mereni");
         /// <summary>
         /// Příznak pro běh programu. Pokud je nastaven na false, program se ukončí.
         /// </summary>

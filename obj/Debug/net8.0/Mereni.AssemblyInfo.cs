@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mereni")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+78b35b77728cccf54ec01fd1f4521871f56d27dd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+46f83433d6d36ea17a139c77fbdb2d4dbce0b70b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mereni")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mereni")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
