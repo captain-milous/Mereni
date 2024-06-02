@@ -14,9 +14,43 @@ sudo apt-get update
 
 sudo apt-get upgrade
 ```
+Pokud nemáte správné rozpoložení klávesnice:
+```
+sudo raspi-config
+```
 ### 2. Instalace DOTNET
+Přejděte na stránku [download .NET](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) a vyberte verzi pro ARM64 (pro Linux).
 
-
+Vytvořte adresář:
+```
+sudo mkdir -p /usr/local/share/dotnet
+```
+Rozbalte SDK do /usr/local/share/dotnet:
+```
+sudo tar zxf dotnet-sdk-8.0.100-linux-arm64.tar.gz -C /usr/local/share/dotnet
+```
+Vytvoření symbolického odkazu:
+```
+sudo ln -s /usr/local/share/dotnet/dotnet /usr/local/bin/dotnet
+```
+Ověření symbolického odkazu:
+```
+ls -l /usr/local/bin/dotnet
+```
+Nastavení PATH pro všechny uživatele:
+```
+echo 'export DOTNET_ROOT=/usr/local/share/dotnet' | sudo tee -a /etc/profile
+echo 'export PATH=$PATH:/usr/local/share/dotnet' | sudo tee -a /etc/profile
+source /etc/profile
+```
+Restartujte shell nebo systém:
+```
+exec $SHELL
+```
+Ověření instalace:
+```
+sudo dotnet --version
+```
 ### Nastavení statické ip adresy
 ```
 sudo apt-get install dhcpcd5
