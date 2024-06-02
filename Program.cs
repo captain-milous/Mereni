@@ -10,7 +10,7 @@ namespace Mereni
         /// <summary>
         /// Cesta ke složce, kde budou ukládána měření.
         /// </summary>
-        public static string Folder = AppDomain.CurrentDomain.BaseDirectory + "Mereni";
+        public static string Folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Mereni");
         /// <summary>
         /// Příznak pro běh programu. Pokud je nastaven na false, program se ukončí.
         /// </summary>
@@ -23,6 +23,7 @@ namespace Mereni
         /// <returns>Asynchronní úloha.</returns>
         static async Task Main(string[] args)
         {
+            Console.WriteLine(Folder);
             try
             {
                 if (!Directory.Exists(Folder))
