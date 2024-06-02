@@ -1,10 +1,16 @@
 # Mereni
 
-Tato aplikace je určená získávání naaměřených hodnot pro Raspberry Pi
+Tento projekt je jednoduchý HTTP listener, který přijímá GET požadavky s určitými parametry, a zapisuje tyto parametry do CSV souborů.
+Tato aplikace je určená získávání naměřených hodnot z měřících zařízeních pro Raspberry Pi pomocí http get requestu.
 
 ## Autor
 
 Miloš Tesař
+
+## Struktura programu
+
+- **Program.cs**: Hlavní třída obsahující vstupní bod programu a HTTP listener.
+- **CSVHandler.cs**: Třída pro práci s CSV soubory, obsahuje metodu pro ukládání dat do CSV.
 
 ## Instalace
 
@@ -18,8 +24,11 @@ Pokud nemáte správné rozpoložení klávesnice:
 ```
 sudo raspi-config
 ```
+
+
 ### 2. Instalace DOTNET
-Přejděte na stránku [download .NET](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) a vyberte verzi pro ARM64 (pro Linux).
+
+**Přejděte na stránku [download .NET](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) a vyberte verzi pro ARM64 (pro Linux).**
 
 Vytvořte adresář:
 ```
@@ -51,6 +60,8 @@ Ověření instalace:
 ```
 sudo dotnet --version
 ```
+
+
 ### 3. Instalace aplikace
 Nainstalujte git:
 ```
@@ -72,6 +83,7 @@ sudo chmod 777 Mereni
 ```
 sudo dontnet Mereni.dll
 ```
+
 
 ### 4. Nastavení statické ip adresy
 ```
@@ -102,6 +114,7 @@ Zkontrolujte nastavení: Ujistěte se, že se statická IP adresa použila sprá
 ```
 hostname -I
 ```
+
 
 ### 5. Vytvoření sdílené složky
 Nainstalujte balíček Samba:
@@ -134,23 +147,32 @@ Restartujte Samba, aby se změny projevily:
 ```
 sudo systemctl restart smbd
 ```
+
+
 ### 6. Nastavení zapnutí aplikace po restartu
+Otevřete cron konfiguraci pro uživatele root:
+```
+sudo crontab -e
 
-
+```
+Přidejte následující řádek na konec souboru:
+```
+@reboot /usr/bin/sudo /usr/bin/dotnet /cesta/k/vasi/aplikaci/myapp.dll
+```
 
 
 ## Připojení ke sdílené složce
 
-### 1. Otevřete Průzkumník souborů na Windows 11.
+1. Otevřete Průzkumník souborů na Windows 11.
 
-### 2. Klikněte na „Tento počítač“.
+2. Klikněte na „Tento počítač“.
 
-### 3. Klikněte na „Připojit síťovou jednotku“ v horní nabídce.
+3. Klikněte na „Připojit síťovou jednotku“ v horní nabídce.
 
-### 4. Vyberte písmeno jednotky a zadejte adresu vaší sdílené složky ve formátu:
+4. Vyberte písmeno jednotky a zadejte adresu vaší sdílené složky ve formátu:
 ```
 \\IP_adresa_Raspberry_Pi\shared
 ```
-### 5. Klikněte na „Dokončit“.
+5. Klikněte na „Dokončit“.
 
-### 6. Zadejte uživatelské jméno a heslo, které jste nastavili pro Samba (např. uživatel: pi, heslo: vámi_zadané_heslo).
+6. Zadejte uživatelské jméno a heslo, které jste nastavili pro Samba (např. uživatel: pi, heslo: vámi_zadané_heslo).
